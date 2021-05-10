@@ -1,6 +1,6 @@
-# strides-backend
+# strides-api-sample-code
 
-Strides Development Backend Engineering
+A small api server using Node.js, Postgres.
 
 ## Dev Environment
 
@@ -29,3 +29,27 @@ npm run dev
 ```
 npm run build
 ```
+
+## API examples
+
+### Signup an account / create a new user with name and password
+
+```
+POST^ .../signup
+```
+
+### Get all users
+
+```
+GET^ .../users
+```
+
+Should include an existing & valid `password hash` to the `Authorization` header.
+
+### Get a user
+
+```
+GET^ .../users/:id
+```
+
+Should include an existing & valid `password hash` to the `Authorization` header.
