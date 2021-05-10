@@ -16,6 +16,12 @@ Install `postgres` server
 brew install postgres
 ```
 
+For Windows, download and install postgres from here: 
+
+https://www.postgresql.org/download/windows/
+
+
+
 ### Import database dump into `postgres`
 
 ```
