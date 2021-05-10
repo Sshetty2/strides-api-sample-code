@@ -4,9 +4,25 @@ A small api server using Node.js, Postgres.
 
 ## Dev Environment
 
+### Env
+
 Copy `.env.template` to `.env` and update env variables.
 
-### Install
+### Postgres
+
+Install `postgres` server
+
+```
+brew install postgres
+```
+
+### Import database dump into `postgres`
+
+```
+/src/db_dump.sql
+```
+
+### Project Install
 
 ```
 npm install
