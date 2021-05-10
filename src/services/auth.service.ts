@@ -10,12 +10,15 @@ export class AuthService {
     return await Password.create({ hash, user_id: user.id });
   }
 
-  async verifyPasswordHash(hash: string) {
-    const passwords = (await Password.findAll({
-      where: {
-        hash,
-      },
-    })) as PasswordModel[];
-    return passwords.length >= 1;
+  async verifyPassword(password: string) {
+    const passwords = (await Password.findAll()) as PasswordModel[];
+    for (const p of passwords) {
+      const { hash } = p;
+      const isMatch = await bcrypt.compare(password, hash);
+      if (isMatch) {
+        return true;
+      }
+    }
+    return false;
   }
 }

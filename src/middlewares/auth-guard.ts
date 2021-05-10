@@ -11,7 +11,7 @@ export const AuthorizationGuard: () => RequestHandler = () => async (
   const { authorization } = req.headers;
   const hasAccess =
     authorization &&
-    (await authService.verifyPasswordHash(authorization as string));
+    (await authService.verifyPassword(authorization as string));
 
   if (!hasAccess) {
     return res.status(401).send({ message: "Unauthorized" });
